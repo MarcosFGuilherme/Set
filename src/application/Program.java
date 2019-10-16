@@ -43,10 +43,42 @@ public class Program {
 		lSet.add("Tablet");
 		
 		
-		System.out.println(lSet.contains("Notebook"));
+		System.out.println("Tem o item [Nootebook] ? " + lSet.contains("Notebook"));
+		System.out.println();
+		System.out.println("Mostrando o conteudo do SET.");
 		for (String p : lSet) {
 			System.out.println(p);
 		}
+		System.out.println();
+		System.out.println("Removendo o [Tablet] e mostrando novamente.");
+		lSet.remove("Tablet");
+		for (String p : lSet) {
+			System.out.println(p);
+		}
+
+		lSet.add("Tablet");
+		
+		
+		System.out.println();
+		System.out.println("Removendo os itens que contem pelo menos 3 letras e mostrando novamente.");
+		lSet.removeIf(x -> x.length() >=3);
+		for (String p : lSet) {
+			System.out.println(p);
+		}
+		
+		lSet.add("Notebook");
+		lSet.add("Tablet");
+		
+		System.out.println();
+		System.out.println("Removendo os itens que comecem com [T]  e mostrando novamente.");
+		lSet.removeIf(x -> x.charAt(0)== 'T');
+		for (String p : lSet) {
+			System.out.println(p);
+		}
+		lSet.add("Tv");
+		lSet.add("Tablet");
+		
+		
 	}
 
 }
