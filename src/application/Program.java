@@ -15,20 +15,19 @@ public class Program {
 		demoHashSet();
 
 		System.out.println();
-
 		demoTreeSet();
 
 		System.out.println();
-
 		demoLinkedHashSet();
 
 		System.out.println();
-
 		demo2();
 
 		System.out.println();
-
 		product();
+		
+		System.out.println();
+		demoProduct();
 
 	}
 
@@ -122,12 +121,24 @@ public class Program {
 
 	public static void product() {
 		Set<Product> set = new HashSet<>();
+
+		set.add(new Product("TV", 900.0));
+		set.add(new Product("Notebook", 1200.0));
+		set.add(new Product("Tablet", 400.0));
+
+		Product prod = new Product("Notebook", 1200.0);
+		System.out.println(set.contains(prod));
+	}
+
+	public static void demoProduct() {
+		Set<Product> set = new TreeSet<>();
 		
 		set.add(new Product("TV", 900.0));
 		set.add(new Product("Notebook", 1200.0));
 		set.add(new Product("Tablet", 400.0));
 		
-		Product prod = new Product("Notebook", 1200.0);
-		System.out.println(set.contains(prod));
+		for (Product p : set) {
+			System.out.println(p);
+		}
 	}
 }
