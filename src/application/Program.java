@@ -6,6 +6,8 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
+import entities.Product;
+
 public class Program {
 
 	public static void main(String[] args) {
@@ -19,10 +21,15 @@ public class Program {
 		System.out.println();
 
 		demoLinkedHashSet();
-		
+
 		System.out.println();
-		
+
 		demo2();
+
+		System.out.println();
+
+		product();
+
 	}
 
 	public static void demoHashSet() {
@@ -110,6 +117,17 @@ public class Program {
 		// difference
 		Set<Integer> e = new TreeSet<>(a);
 		e.removeAll(b);
-		System.out.println("difference : "+ e);
+		System.out.println("difference : " + e);
+	}
+
+	public static void product() {
+		Set<Product> set = new HashSet<>();
+		
+		set.add(new Product("TV", 900.0));
+		set.add(new Product("Notebook", 1200.0));
+		set.add(new Product("Tablet", 400.0));
+		
+		Product prod = new Product("Notebook", 1200.0);
+		System.out.println(set.contains(prod));
 	}
 }
